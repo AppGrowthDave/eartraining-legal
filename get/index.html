@@ -29,6 +29,14 @@ p{color:var(--muted);font-size:16px;line-height:1.5;margin:0 0 28px}
   -webkit-tap-highlight-color:transparent;transition:transform .08s ease,box-shadow .08s ease}
 .btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--accent-lip)}
 .note{font-size:13px;color:#7C75A8;margin-top:22px}
+.btn2{display:block;width:100%;margin-top:12px;padding:15px 20px;border-radius:16px;border:1.5px solid var(--border);
+  background:var(--surface);color:var(--ink);font-size:16px;font-weight:700;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.btn2:active{opacity:.7}
+.help{display:none;text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  padding:16px 18px;margin-top:22px;font-size:15px;line-height:1.45;color:var(--ink)}
+.help.show{display:block}
+.help b{color:var(--accent)}
+.help ol{margin:8px 0 0;padding-left:20px;color:#DAD6F0}.help li{margin:4px 0}
 .note a{color:#7C75A8}
 </style>
 </head>
@@ -39,6 +47,14 @@ p{color:var(--muted);font-size:16px;line-height:1.5;margin:0 0 28px}
 <div class="sub">Music Theory Lab</div>
 <p>Perfect pitch, intervals and chords.<br>Train your ear 5 minutes a day.</p>
 <a class="btn" id="go" href="https://apps.apple.com/app/apple-store/id6832422244?pt=128461344&amp;ct=web&amp;mt=8">Get it on the App Store</a>
+<a class="btn2" id="go-app" href="itms-apps://apps.apple.com/app/id6832422244">Open in the App Store app</a>
+<div class="help" id="help">
+<b>Button not working?</b> Some apps (like Threads) block App Store links. Either:
+<ol>
+<li>Tap <b>•••</b> at the top right and choose <b>Open in browser</b> (or Safari), or</li>
+<li>Open the App Store and search <b>Ear Training Music Theory Lab</b>.</li>
+</ol>
+</div>
 <div class="note">iPhone app · <a href="../support/">Support</a> · <a href="../privacy/">Privacy</a></div>
 </main>
 <script>
@@ -49,6 +65,8 @@ p{color:var(--muted);font-size:16px;line-height:1.5;margin:0 0 28px}
   var url = "https://apps.apple.com/app/apple-store/id6832422244?pt=128461344&ct=" + ct + "&mt=8";
   document.getElementById("go").href = url;
   location.replace(url);
+  // Some in-app browsers (Threads) silently block apps.apple.com. If we're still here, show the way out.
+  setTimeout(function () { document.getElementById("help").className = "help show"; }, 1500);
 })();
 </script>
 </body>
