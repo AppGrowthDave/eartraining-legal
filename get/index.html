@@ -47,6 +47,7 @@ p{color:var(--muted);font-size:16px;line-height:1.5;margin:0 0 28px}
 <div class="sub">Music Theory Lab</div>
 <p>Perfect pitch, intervals and chords.<br>Train your ear 5 minutes a day.</p>
 <a class="btn" id="go" href="https://apps.apple.com/app/apple-store/id6832422244?pt=128461344&amp;ct=web&amp;mt=8">Get it on the App Store</a>
+<a class="btn2" id="go-safari" href="x-safari-https://appgrowthdave.github.io/eartraining-legal/get/">Open in Safari</a>
 <a class="btn2" id="go-app" href="itms-apps://apps.apple.com/app/id6832422244">Open in the App Store app</a>
 <div class="help" id="help">
 <b>Button not working?</b> Some apps (like Threads) block App Store links. Either:
@@ -64,6 +65,8 @@ p{color:var(--muted);font-size:16px;line-height:1.5;margin:0 0 28px}
   var ct = (new URLSearchParams(location.search).get("ct") || "web").replace(/[^a-z0-9_-]/gi, "").slice(0, 40) || "web";
   var url = "https://apps.apple.com/app/apple-store/id6832422244?pt=128461344&ct=" + ct + "&mt=8";
   document.getElementById("go").href = url;
+  // Safari (iOS 17+) escapes in-app browsers; it reopens this page with the same campaign, which then redirects
+  document.getElementById("go-safari").href = "x-safari-https://appgrowthdave.github.io/eartraining-legal/get/?ct=" + ct;
   location.replace(url);
   // Some in-app browsers (Threads) silently block apps.apple.com. If we're still here, show the way out.
   setTimeout(function () { document.getElementById("help").className = "help show"; }, 1500);
