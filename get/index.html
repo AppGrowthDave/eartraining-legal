@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ear Training: Music Theory Lab</title>
+<meta name="description" content="Train your ear 5 minutes a day: perfect pitch, intervals and chords. Download Ear Training: Music Theory Lab on the App Store.">
+<meta name="apple-itunes-app" content="app-id=6832422244">
+<meta property="og:title" content="Ear Training: Music Theory Lab">
+<meta property="og:description" content="Train your ear 5 minutes a day: perfect pitch, intervals and chords.">
+<meta property="og:image" content="https://appgrowthdave.github.io/eartraining-legal/icon.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="../icon.png">
+<style>
+:root{--bg:#15102E;--surface:#1E1840;--border:#2E2760;--ink:#F4F2FF;--muted:#A9A2D0;--accent:#FF8A00;--accent-lip:#D96A00}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(120% 80% at 50% 0%,#2A1880 0%,var(--bg) 60%);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:center;
+  padding:32px 22px calc(32px + env(safe-area-inset-bottom))}
+main{max-width:380px;width:100%}
+.icon{width:112px;height:112px;border-radius:25px;display:block;margin:0 auto 22px;box-shadow:0 12px 32px rgba(0,0,0,.45)}
+h1{font-size:28px;line-height:1.15;font-weight:800;letter-spacing:-.4px;margin:0}
+.sub{color:var(--accent);font-weight:700;font-size:19px;margin:4px 0 14px}
+p{color:var(--muted);font-size:16px;line-height:1.5;margin:0 0 28px}
+.btn{display:block;width:100%;padding:17px 20px;border-radius:16px;background:var(--accent);color:#fff;
+  font-size:18px;font-weight:800;text-decoration:none;box-shadow:0 5px 0 var(--accent-lip);
+  -webkit-tap-highlight-color:transparent;transition:transform .08s ease,box-shadow .08s ease}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--accent-lip)}
+.note{font-size:13px;color:#7C75A8;margin-top:22px}
+.note a{color:#7C75A8}
+</style>
+</head>
+<body>
+<main>
+<img class="icon" src="../icon.png" alt="Ear Training app icon" width="112" height="112">
+<h1>Ear Training</h1>
+<div class="sub">Music Theory Lab</div>
+<p>Perfect pitch, intervals and chords.<br>Train your ear 5 minutes a day.</p>
+<a class="btn" id="go" href="https://apps.apple.com/app/apple-store/id6832422244?pt=128461344&amp;ct=web&amp;mt=8">Get it on the App Store</a>
+<div class="note">iPhone app · <a href="../support/">Support</a> · <a href="../privacy/">Privacy</a></div>
+</main>
+<script>
+// Send visitors straight on to the App Store. The campaign tag comes from ?ct= (e.g. /get/?ct=threads)
+// so each platform's installs show up separately in App Analytics; without it, installs count as "web".
+(function () {
+  var ct = (new URLSearchParams(location.search).get("ct") || "web").replace(/[^a-z0-9_-]/gi, "").slice(0, 40) || "web";
+  var url = "https://apps.apple.com/app/apple-store/id6832422244?pt=128461344&ct=" + ct + "&mt=8";
+  document.getElementById("go").href = url;
+  location.replace(url);
+})();
+</script>
+</body>
+</html>
